@@ -1,0 +1,12 @@
+{
+  "name": "introduction-card",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "yarn client:dev",
+    "client:dev": "yarn --cwd client dev"
+  },
+  "repository": "git@github.com:SoraY677/introduction-card.git",
+  "author": "soray677 <soray677@outlook.com>",
+  "license": "MIT"
+}
