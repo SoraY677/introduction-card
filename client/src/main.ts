@@ -11,16 +11,26 @@ type ANGLE = {
 
 document.querySelectorAll(".card").forEach((el) => {
   const element = el as HTMLElement;
+  const inner = element.querySelector(".card-inner") as HTMLHtmlElement;
   const content = element.querySelector(".card-content") as HTMLHtmlElement;
   (element as HTMLElement).addEventListener(
     "mousemove",
     (event: MouseEvent) => {
       const angle = calcRotationAngle({ x: event.clientX, y: event.clientY });
-      element.style.transform = `rotateY(${angle.x}deg) rotateX(${angle.y}deg)`;
+      inner.style.transform = `rotateY(${angle.x}deg) rotateX(${angle.y}deg)`;
       const movePos = calcMoveDirection(angle);
-      element.style.boxShadow = `${movePos.x}px ${-movePos.y}px 24px 2px #000`;
+      inner.style.boxShadow = `${movePos.x}px ${-movePos.y}px 24px 2px #555`;
       content.style.transform = `translate(${angle.x}px, ${-angle.y}px)`;
     }
+  );
+});
+
+document.getElementById("turnOver")?.addEventListener("click", () => {
+  (document.querySelector(".card > .front-card") as HTMLElement).classList.add(
+    "turn-over-to-back"
+  );
+  (document.querySelector(".card > .back-card") as HTMLElement).classList.add(
+    "turn-over-to-back"
   );
 });
 
