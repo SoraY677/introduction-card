@@ -1,0 +1,17 @@
+@import "./config.scss";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100dvh;
+  height: 100vh;
+  max-width: 100vw;
+}
