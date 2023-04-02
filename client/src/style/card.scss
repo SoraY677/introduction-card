@@ -21,3 +21,66 @@
     }
   }
 }
+
+.card {
+  > * {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-main {
+    position: relative;
+  }
+
+  button.turn-over {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.card.front {
+  .card-main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 3em;
+    .icon {
+      display: flex;
+      align-items: center;
+      width: 30%;
+      > img {
+        overflow: hidden;
+        border-radius: 100%;
+        width: 100%;
+      }
+    }
+
+    .main-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      .text-container {
+        height: fit-content;
+      }
+      .name {
+        font-size: 3.2vw;
+        border-bottom: 1px solid $color-main;
+      }
+      .role {
+        font-size: 1.6vw;
+      }
+
+      @media screen and (max-width: 1020px) {
+        .name {
+          font-size: 2.3em;
+        }
+        .role {
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+}
