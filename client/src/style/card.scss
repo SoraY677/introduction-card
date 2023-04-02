@@ -69,7 +69,7 @@
       justify-content: center;
       width: 100%;
 
-      .title {
+      > .title {
         height: fit-content;
         margin-bottom: 1em;
       }
@@ -83,6 +83,10 @@
         font-size: 1.6vw;
         gap: 1.4em;
         align-items: center;
+
+        .and-more {
+          font-size: 0.7em;
+        }
       }
 
       @media screen and (max-width: 1020px) {
