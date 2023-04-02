@@ -7,35 +7,21 @@
     <title>SoraY677</title>
   </head>
   <body>
-    <!-- <div class="overlay"></div> -->
-    <div class="card">
-      <!-- 前面 -->
-      <div class="card-inner front-card">
-        <div class="card-content">
-          <div class="img-container">
-            <img src="./icon.png" />
-          </div>
-          <div class="content">
-            <div class="container">
-              <p class="name">SoraY677</p>
-              <p class="role">WebEngineer</p>
+    <div layer="container">
+      <div layer="tilt-container">
+        <div class="card-container">
+          <div class="card front" layer="front-turn-over">
+            <div layer="tilt-inner">
+              表面
+              <button turn-over-trigger>toBack</button>
             </div>
           </div>
-        </div>
-        <div class="turn-over-area">
-          <button id="turnOver">
-            <p>to back</p>
-          </button>
-        </div>
-      </div>
-      <div class="card-inner back-card">
-        <div class="card-content">
-          <div class="content">裏面</div>
-        </div>
-        <div class="turn-over-area">
-          <button id="turnOver">
-            <p>to front</p>
-          </button>
+          <div class="card back" layer="back-turn-over">
+            <div layer="tilt-inner">
+              裏面
+              <button turn-over-trigger>toFront</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

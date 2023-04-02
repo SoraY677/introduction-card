@@ -1,0 +1,7 @@
+[layer] {
+  transition-duration: 0.2s;
+}
+
+[layer="back-turn-over"] {
+  transform: rotateY(180deg);
+}
