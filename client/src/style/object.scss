@@ -1,0 +1,11 @@
+@import "./config.scss";
+@import "./animation.scss";
+
+.waves-circle {
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-color: $color-main;
+  border-radius: 100%;
+  animation: waves-circle 1s ease-in-out 0s infinite;
+}

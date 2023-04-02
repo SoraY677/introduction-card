@@ -1,4 +1,5 @@
 @import "./config.scss";
+@import "./animation.scss";
 
 .card-container {
   position: relative;
@@ -34,12 +35,16 @@
 
   button.turn-over {
     position: absolute;
+    display: flex;
     right: 0;
     bottom: 0;
+    align-items: end;
+    gap: 1em;
   }
 }
 
 .card.front {
+  animation: scale-fade-in 1s ease-in-out 0s 1;
   .card-main {
     display: flex;
     width: 100%;
@@ -47,30 +52,37 @@
     gap: 3em;
     .icon {
       display: flex;
+      justify-content: center;
       align-items: center;
       width: 30%;
       > img {
         overflow: hidden;
         border-radius: 100%;
-        width: 100%;
+        width: 12em;
+        height: 12em;
       }
     }
 
-    .main-text {
+    .main {
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
 
-      .text-container {
+      .title {
         height: fit-content;
+        margin-bottom: 1em;
       }
       .name {
         font-size: 3.2vw;
         border-bottom: 1px solid $color-main;
       }
       .role {
+        display: flex;
+        padding-top: 0.2em;
         font-size: 1.6vw;
+        gap: 1.4em;
+        align-items: center;
       }
 
       @media screen and (max-width: 1020px) {
@@ -79,6 +91,14 @@
         }
         .role {
           font-size: 1.4em;
+        }
+      }
+
+      .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        > p {
         }
       }
     }
