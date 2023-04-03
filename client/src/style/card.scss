@@ -102,6 +102,21 @@
         display: flex;
         flex-direction: column;
         align-items: end;
+
+        > a {
+          padding: 0.8em 2em;
+          border-radius: 1em;
+          color: $color-bg;
+          background-color: $color-main;
+          border: 1px solid $color-main;
+          text-decoration: none;
+          transition-duration: 0.3s;
+
+          &:hover {
+            color: $color-main;
+            background-color: $color-bg;
+          }
+        }
       }
     }
   }
@@ -115,6 +130,8 @@
 
     > li {
       width: 30%;
+      display: flex;
+      flex-direction: column;
       border: 1px solid $color-main;
       border-radius: 1em;
       overflow: hidden;
@@ -125,7 +142,18 @@
       }
 
       .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1 1 auto;
         padding: 1em;
+
+        > a {
+          display: flex;
+          align-items: flex-end;
+          justify-content: end;
+          margin-top: auto;
+        }
       }
     }
   }
@@ -133,8 +161,9 @@
   .bottom-block {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
     gap: 2%;
+    padding-top: 1em;
   }
 
   .organization {
@@ -143,12 +172,14 @@
     width: 40%;
 
     > h1 {
-      font-size: 1.3em;
+      font-size: 1em;
+      font-weight: normal;
     }
     > ul.organizations-list {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      align-items: center;
       gap: 1em;
       > li {
         display: flex;
@@ -164,18 +195,25 @@
 
   .divide-line {
     height: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
     border-left: 1px solid $color-main;
   }
 
   .link {
     width: 40%;
     > h1 {
-      font-size: 1.3em;
+      font-size: 1em;
+      font-weight: normal;
     }
 
     > .link-list {
       > li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
+        gap: 1em;
         img {
           width: 3em;
           height: 3em;
