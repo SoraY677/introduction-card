@@ -31,6 +31,8 @@
 
   .card-main {
     position: relative;
+    width: 100%;
+    height: 100%;
   }
 
   button.turn-over {
@@ -47,8 +49,6 @@
   animation: scale-fade-in 1s ease-in-out 0s 1;
   .card-main {
     display: flex;
-    width: 100%;
-    height: 100%;
     gap: 3em;
     .icon {
       display: flex;
@@ -102,7 +102,83 @@
         display: flex;
         flex-direction: column;
         align-items: end;
-        > p {
+      }
+    }
+  }
+}
+
+.card.back {
+  ul.example-projects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    > li {
+      width: 30%;
+      border: 1px solid $color-main;
+      border-radius: 1em;
+      overflow: hidden;
+
+      img {
+        width: auto;
+        min-width: 100%;
+      }
+
+      .description {
+        padding: 1em;
+      }
+    }
+  }
+
+  .bottom-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2%;
+  }
+
+  .organization {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+    > h1 {
+      font-size: 1.3em;
+    }
+    > ul.organizations-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 1em;
+      > li {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        > img {
+          width: 3em;
+          height: 3em;
+        }
+      }
+    }
+  }
+
+  .divide-line {
+    height: 100px;
+    border-left: 1px solid $color-main;
+  }
+
+  .link {
+    width: 40%;
+    > h1 {
+      font-size: 1.3em;
+    }
+
+    > .link-list {
+      > li {
+        width: 100%;
+        img {
+          width: 3em;
+          height: 3em;
         }
       }
     }
