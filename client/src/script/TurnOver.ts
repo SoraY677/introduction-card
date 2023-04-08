@@ -41,5 +41,3 @@ window.onload = () => {
     backSurface.style.opacity = `${-mode}`;
   };
 };
-
-turnOver();

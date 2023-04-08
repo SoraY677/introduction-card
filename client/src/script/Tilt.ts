@@ -5,6 +5,12 @@ const tiltContainer = document.querySelector(
 ) as HTMLElement;
 const tiltInner = document.querySelectorAll(`[layer="tilt-inner"]`);
 
+function limitRange(value: number, min: number, max: number) {
+  if (value < min) return min;
+  else if (value > max) return max;
+  return value;
+}
+
 function calcRotationAngle(mouse: POS): ANGLE {
   const centerPosX = window.innerWidth / 2;
   const centerPosY = window.innerHeight / 2;
@@ -12,8 +18,8 @@ function calcRotationAngle(mouse: POS): ANGLE {
   const mouseToCenterDistanceY = centerPosY - mouse.y;
 
   const result: ANGLE = {
-    x: -mouseToCenterDistanceX / (window.innerWidth / 20),
-    y: mouseToCenterDistanceY / (window.innerHeight / 20),
+    x: limitRange(-mouseToCenterDistanceX / (window.innerWidth / 20), -30, 30),
+    y: limitRange(mouseToCenterDistanceY / (window.innerHeight / 20), -30, 30),
   };
 
   return result;
