@@ -4,9 +4,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "yarn client:dev",
-    "client:dev": "yarn --cwd client dev"
+    "build": "yarn client:build",
+    "client:dev": "yarn --cwd client dev",
+    "client:build": "rimraf assets & rimraf img & yarn --cwd client build"
   },
   "repository": "git@github.com:SoraY677/introduction-card.git",
   "author": "soray677 <soray677@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "rimraf": "^4.4.1"
+  }
 }

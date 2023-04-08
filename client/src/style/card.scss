@@ -50,6 +50,9 @@
   }
 
   .card-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     width: 100%;
     height: fit-content;

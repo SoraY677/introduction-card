@@ -1,5 +1,4 @@
 const MODE_FRONT = 1;
-const MODE_BACK = -1;
 let mode: -1 | 1 = MODE_FRONT;
 
 const frontSurface = document.querySelector(
