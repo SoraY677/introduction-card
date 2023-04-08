@@ -4,6 +4,11 @@
 .all-container {
   width: 80%;
   min-height: 56%;
+
+  @media screen and (max-width: 400px) {
+    width: 97%;
+    font-size: 0.9em;
+  }
 }
 
 .card-container {
@@ -27,6 +32,10 @@
       position: absolute;
       top: 0;
       left: 0;
+    }
+
+    @media screen and (max-width: 700px) {
+      padding-bottom: 1em;
     }
   }
 }
@@ -60,6 +69,10 @@
   flex-direction: column;
   animation: scale-fade-in 1s ease-in-out 0s 1;
 
+  @media screen and (max-width: 700px) {
+    font-size: 0.7em;
+  }
+
   .card-inner {
     display: flex;
     flex: 1 1 auto;
@@ -70,6 +83,14 @@
     display: flex;
     flex: 1 1 auto;
     gap: 3em;
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      justify-content: center;
+
+      .icon {
+        width: 100% !important;
+      }
+    }
     .icon {
       display: flex;
       justify-content: center;
@@ -135,6 +156,10 @@
 .card.back {
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 700px) {
+    font-size: 0.7em;
+  }
   .title {
     display: flex;
     justify-content: center;
@@ -165,15 +190,22 @@
       border-radius: 1em;
       overflow: hidden;
 
-      img {
-        width: auto;
-        min-width: 100%;
+      .img-container {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
 
       .description {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         padding: 1em;
 
         h2 {
@@ -190,6 +222,18 @@
         }
       }
     }
+
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      font-size: 0.5em;
+      gap: 0.2em;
+
+      > li {
+        width: 100%;
+        height: 128px;
+        flex-direction: row;
+      }
+    }
   }
 
   .bottom-block {
@@ -198,6 +242,10 @@
     justify-content: space-around;
     gap: 2%;
     padding-top: 1em;
+
+    @media screen and (max-width: 700px) {
+      font-size: 0.6em;
+    }
   }
 
   .organization {
@@ -267,7 +315,7 @@ a.anchor-link {
   border: 1px solid $color-main;
   text-decoration: none;
   transition-duration: 0.3s;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 
   &:hover {
     color: $color-main;
