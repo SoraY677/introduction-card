@@ -1,11 +1,11 @@
 :root {
   @media (prefers-color-scheme: light) {
-    --color-bg: #ffffff;
-    --color-main: #000000;
+    --color-bg: #f2f2f2;
+    --color-main: #2e2e2e;
   }
   @media (prefers-color-scheme: dark) {
-    --color-bg: #000000;
-    --color-main: #fff;
+    --color-bg: #111;
+    --color-main: #ddd;
   }
 }
 
