@@ -42,9 +42,36 @@ export default function () {
     const angle = calcRotationAngle({ x: event.clientX, y: event.clientY });
 
     properties.setRotationStyle(angle);
-    properties.setTranslateStyle({
-      x: angle.x,
-      y: angle.y,
-    });
+    properties.setTranslateStyle(angle);
   });
+
+  let firstDeviceAngle: ANGLE | null = null;
+  // @ts-ignore
+  DeviceOrientationEvent?.requestPermission?.()?.then(
+    (permissionState: string) => {
+      if (permissionState === "granted") {
+        window.addEventListener(
+          "deviceorientation",
+          function (e) {
+            if (e.beta == null || e.gamma == null) return;
+
+            if (firstDeviceAngle == null) {
+              firstDeviceAngle = {
+                x: e.beta,
+                y: e.gamma,
+              };
+            } else {
+              const angle = {
+                x: e.beta - firstDeviceAngle.x,
+                y: e.gamma - firstDeviceAngle.y,
+              };
+              properties.setRotationStyle(angle);
+              properties.setTranslateStyle(angle);
+            }
+          },
+          false
+        );
+      }
+    }
+  );
 }
