@@ -37,40 +37,23 @@ const properties = {
   },
 };
 
-export default function () {
-  window.addEventListener("mousemove", (event: MouseEvent) => {
-    const angle = calcRotationAngle({ x: event.clientX, y: event.clientY });
+function isSmp() {
+  if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-    properties.setRotationStyle(angle);
-    properties.setTranslateStyle(angle);
-  });
-
-  let firstDeviceAngle: ANGLE | null = null;
-  // @ts-ignore
-  DeviceOrientationEvent?.requestPermission?.()?.then(
-    (permissionState: string) => {
-      if (permissionState != "granted") return;
-      window.addEventListener(
-        "deviceorientation",
-        function (e) {
-          if (e.beta == null || e.gamma == null) return;
-
-          if (firstDeviceAngle == null) {
-            firstDeviceAngle = {
-              x: e.beta,
-              y: e.gamma,
-            };
-          } else {
-            const angle = {
-              x: e.beta - firstDeviceAngle.x,
-              y: e.gamma - firstDeviceAngle.y,
-            };
-            properties.setRotationStyle(angle);
-            properties.setTranslateStyle(angle);
-          }
-        },
-        false
-      );
-    }
-  );
+export default async function () {
+  if (!isSmp()) {
+    const movementEvent = (pos: POS) => {
+      const angle = calcRotationAngle(pos);
+      properties.setRotationStyle(angle);
+      properties.setTranslateStyle(angle);
+    };
+    window.addEventListener("mousemove", (event: MouseEvent) => {
+      movementEvent({ x: event.clientX, y: event.clientY });
+    });
+  }
 }
