@@ -1,11 +1,19 @@
 @import "./config.scss";
 @import "./animation.scss";
 
+.all-container {
+  width: 80%;
+  min-height: 56%;
+}
+
 .card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
-  height: 50dvh;
+  min-height: 100%;
   max-width: 100vw;
-  aspect-ratio: 16/9;
+  width: 100%;
 
   > .card {
     width: 100%;
@@ -15,7 +23,7 @@
     box-shadow: 0px 0px 24px 7px $color-main;
     background-color: $color-bg;
 
-    &.back {
+    &.front {
       position: absolute;
       top: 0;
       left: 0;
@@ -24,6 +32,8 @@
 }
 
 .card {
+  flex: 1 1 auto;
+  height: fit-content;
   > * {
     width: 100%;
     height: 100%;
@@ -32,7 +42,7 @@
   .card-main {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: fit-content;
   }
 
   button.turn-over {
@@ -46,9 +56,19 @@
 }
 
 .card.front {
+  display: flex;
+  flex-direction: column;
   animation: scale-fade-in 1s ease-in-out 0s 1;
+
+  .card-inner {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+
   .card-main {
     display: flex;
+    flex: 1 1 auto;
     gap: 3em;
     .icon {
       display: flex;
@@ -103,19 +123,9 @@
         flex-direction: column;
         align-items: end;
 
-        > a {
-          padding: 0.8em 2em;
-          border-radius: 1em;
-          color: $color-bg;
-          background-color: $color-main;
-          border: 1px solid $color-main;
-          text-decoration: none;
-          transition-duration: 0.3s;
-
-          &:hover {
-            color: $color-main;
-            background-color: $color-bg;
-          }
+        > p {
+          padding-top: 1em;
+          padding-bottom: 1em;
         }
       }
     }
@@ -123,6 +133,17 @@
 }
 
 .card.back {
+  .title {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1em;
+    font-weight: normal;
+  }
+
+  > .card-inner {
+    height: fit-content;
+  }
+
   ul.example-projects {
     display: flex;
     flex-direction: row;
@@ -145,14 +166,19 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        flex: 1 1 auto;
         padding: 1em;
 
+        h2 {
+          padding-bottom: 0.2em;
+        }
+
+        > .content {
+          flex: 1 1 auto;
+          font-size: 0.9em;
+        }
+
         > a {
-          display: flex;
-          align-items: flex-end;
-          justify-content: end;
-          margin-top: auto;
+          margin-top: 10px;
         }
       }
     }
@@ -220,5 +246,23 @@
         }
       }
     }
+  }
+}
+
+a.anchor-link {
+  display: flex;
+  justify-content: center;
+  padding: 0.4em 2em;
+  border-radius: 0.4em;
+  color: $color-bg;
+  background-color: $color-main;
+  border: 1px solid $color-main;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  font-size: 1.2rem;
+
+  &:hover {
+    color: $color-main;
+    background-color: $color-bg;
   }
 }
