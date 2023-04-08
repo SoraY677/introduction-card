@@ -1,2 +1,13 @@
-$color-main: #000000;
-$color-bg: #ffffff;
+:root {
+  @media (prefers-color-scheme: light) {
+    --color-bg: #ffffff;
+    --color-main: #000000;
+  }
+  @media (prefers-color-scheme: dark) {
+    --color-bg: #000000;
+    --color-main: #fff;
+  }
+}
+
+$color-main: var(--color-main);
+$color-bg: var(--color-bg);

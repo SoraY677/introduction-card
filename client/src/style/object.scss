@@ -9,3 +9,7 @@
   border-radius: 100%;
   animation: waves-circle 1s ease-in-out 0s infinite;
 }
+
+.icon {
+  filter: drop-shadow(0px 0px 2px $color-main);
+}
