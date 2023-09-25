@@ -47,6 +47,7 @@ function isSmp() {
 
 export default async function () {
   if (!isSmp()) {
+    // @ts-ignore
     const movementEvent = (pos: POS) => {
       const angle = calcRotationAngle(pos);
       properties.setRotationStyle(angle);
