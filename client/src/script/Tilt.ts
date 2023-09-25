@@ -52,8 +52,8 @@ export default async function () {
       properties.setRotationStyle(angle);
       properties.setTranslateStyle(angle);
     };
-    window.addEventListener("mousemove", (event: MouseEvent) => {
-      movementEvent({ x: event.clientX, y: event.clientY });
-    });
+    // window.addEventListener("mousemove", (event: MouseEvent) => {
+    //   movementEvent({ x: event.clientX, y: event.clientY });
+    // });
   }
 }
